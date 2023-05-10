@@ -1,14 +1,10 @@
-<!-- Rename the heading when using this template -->
-# cloud-platform-terraform-_template_
-
-<!-- Remove this note -->
-_Note: See the [source of this file](https://github.com/ministryofjustice/cloud-platform-terraform-template/blob/main/README.md?plain=1) for inline comments to help you complete this file._
+# cloud-platform-terraform-external-secrets-operator
 
 <!-- Change the URL in the release badge to point towards your new repository -->
-[![Releases](https://img.shields.io/github/release/ministryofjustice/cloud-platform-terraform-template/all.svg?style=flat-square)](https://github.com/ministryofjustice/cloud-platform-terraform-template/releases)
+[![Releases](https://img.shields.io/github/release/ministryofjustice/cloud-platform-terraform-template/all.svg?style=flat-square)](https://github.com/ministryofjustice/cloud-platform-terraform-external-secrets-operator/releases)
 
 <!-- Add a short description of the module -->
-This Terraform module will...
+This Terraform module will deploy Cloud Platform External Secrets Operator
 
 ## Usage
 
@@ -16,8 +12,8 @@ This Terraform module will...
 
 <!-- Change the source URL below to point towards your new repository -->
 ```hcl
-module "template" {
-  source = "github.com/ministryofjustice/cloud-platfrom-terraform-template?ref=version"
+module "eso" {
+  source = "github.com/ministryofjustice/cloud-platfrom-terraform-external-secrets-operator?ref=version"
 }
 ```
 
