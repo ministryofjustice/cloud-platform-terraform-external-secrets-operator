@@ -39,7 +39,6 @@ resource "helm_release" "external_secrets" {
 
   depends_on = [
     var.dependence_prometheus,
-    var.dependence_opa,
     ]
  
 }
