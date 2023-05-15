@@ -34,6 +34,7 @@ resource "helm_release" "external_secrets" {
   repository       = "https://charts.external-secrets.io"
   chart            = "external-secrets"
   version          = "0.8.1"
+  namespace     = kubernetes_namespace.external_secrets_operator.id
 
   values = [templatefile("${path.module}/templates/values.yaml.tpl", {
     service_account_name = local.external_secrets_service_account_name
