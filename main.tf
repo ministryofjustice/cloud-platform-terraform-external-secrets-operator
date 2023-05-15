@@ -1,6 +1,9 @@
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
+locals {
+  external_secrets_service_account_name = "external-secrets-operator"
+}
 
 #############
 # Namespace #

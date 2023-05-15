@@ -6,7 +6,7 @@ module "external_secrets_iam_assumable_role" {
   role_description              = "Role for External Secrets Operator. Corresponds to external-secrets k8s ServiceAccount."
   provider_url                  = var.eks_cluster_oidc_issuer_url
   role_policy_arns              = [length(aws_iam_policy.external_secrets) >= 1 ? aws_iam_policy.external_secrets.arn : ""]
-  oidc_fully_qualified_subjects = ["system:serviceaccount:external-secrets-operator:external-secrets-operator"]
+  oidc_fully_qualified_subjects = ["system:serviceaccount:external-secrets-operator:${local.external_secrets_service_account_name}"]
 }
 
 resource "aws_iam_policy" "external_secrets" {
