@@ -1,6 +1,9 @@
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
+locals {
+  external_secrets_service_account_name = "external-secrets-operator"
+}
 
 #############
 # Namespace #
@@ -31,6 +34,7 @@ resource "helm_release" "external_secrets" {
   repository       = "https://charts.external-secrets.io"
   chart            = "external-secrets"
   version          = "0.8.1"
+  namespace     = kubernetes_namespace.external_secrets_operator.id
 
   values = [templatefile("${path.module}/templates/values.yaml.tpl", {
     service_account_name = local.external_secrets_service_account_name
@@ -38,8 +42,9 @@ resource "helm_release" "external_secrets" {
   })]
 
   depends_on = [
+    kubernetes_namespace.external_secrets_operator,
+    module.external_secrets_iam_assumable_role,
     var.dependence_prometheus,
-    var.dependence_opa,
     ]
  
 }
