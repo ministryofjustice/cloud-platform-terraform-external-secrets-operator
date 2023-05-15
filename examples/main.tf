@@ -6,4 +6,5 @@ module "eso" {
   source = "../"
     dependence_prometheus           = "ignore"
     #dependence_prometheus           = module.monitoring.prometheus_operator_crds_status
+    secrets_prefix = "test"
 }

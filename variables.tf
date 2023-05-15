@@ -13,3 +13,8 @@ variable "eks_cluster_oidc_issuer_url" {
   type        = string
   default     = ""
 }
+
+variable "secrets_prefix" {
+  description = "Prefix for secrets in AWS Secrets Manager"
+  type        = string
+}
