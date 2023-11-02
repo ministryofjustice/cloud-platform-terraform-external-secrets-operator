@@ -18,7 +18,7 @@ resource "kubernetes_namespace" "external_secrets_operator" {
       "cloud-platform.justice.gov.uk/environment-name" = "production"
       "cloud-platform.justice.gov.uk/is-production"    = "true"
       "certmanager.k8s.io/disable-validation"          = "true"
-      "pod-security.kubernetes.io/enforce"             = "restricted"
+      "pod-security.kubernetes.io/audit"               = "restricted"
     }
 
     annotations = {
