@@ -49,18 +49,4 @@ resource "helm_release" "external_secrets" {
     ]
  
 }
-resource "kubernetes_cluster_role_binding" "super_privileged_bypass" {
-  metadata {
-    name = "external-secrets-operator:0-super-privileged"
-  }
-  role_ref {
-    api_group = "rbac.authorization.k8s.io"
-    kind      = "ClusterRole"
-    name      = "psp:0-super-privileged"
-  }
-  subject {
-    kind      = "Group"
-    name      = "system:serviceaccounts:external-secrets-operator"
-    api_group = "rbac.authorization.k8s.io"
-  }
-}
+
