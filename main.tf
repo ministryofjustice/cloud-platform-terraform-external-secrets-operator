@@ -45,7 +45,6 @@ resource "helm_release" "external_secrets" {
   depends_on = [
     kubernetes_namespace.external_secrets_operator,
     module.external_secrets_iam_assumable_role,
-    var.dependence_prometheus,
     ]
  
 }

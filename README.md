@@ -58,7 +58,6 @@ See the [examples/](examples/) folder for more information.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cluster_domain_name"></a> [cluster\_domain\_name](#input\_cluster\_domain\_name) | The cluster domain used for externalDNS annotations and certmanager | `any` | n/a | yes |
-| <a name="input_dependence_prometheus"></a> [dependence\_prometheus](#input\_dependence\_prometheus) | Prometheus module dependences in order to be executed. | `any` | n/a | yes |
 | <a name="input_eks_cluster_oidc_issuer_url"></a> [eks\_cluster\_oidc\_issuer\_url](#input\_eks\_cluster\_oidc\_issuer\_url) | If EKS variable is set to true this is going to be used when we create the IAM OIDC role | `string` | `""` | no |
 | <a name="input_secrets_prefix"></a> [secrets\_prefix](#input\_secrets\_prefix) | Prefix for secrets in AWS Secrets Manager | `string` | n/a | yes |
 
