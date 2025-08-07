@@ -34,7 +34,7 @@ resource "helm_release" "external_secrets" {
   name             = "external-secrets"
   repository       = "https://charts.external-secrets.io"
   chart            = "external-secrets"
-  version          = "0.8.1"
+  version          = "0.13.0"
   namespace     = kubernetes_namespace.external_secrets_operator.id
 
   values = [templatefile("${path.module}/templates/values.yaml.tpl", {
