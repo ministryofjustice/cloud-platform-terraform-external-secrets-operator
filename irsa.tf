@@ -1,6 +1,6 @@
 module "external_secrets_iam_assumable_role" {
   source                        = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version                       =  "~> 5.0"
+  version                       =  "~> 6.4"
   create_role                   = true
   role_name                     = "eso.${var.cluster_domain_name}"
   role_description              = "Role for External Secrets Operator. Corresponds to external-secrets k8s ServiceAccount."
